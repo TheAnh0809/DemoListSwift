@@ -15,7 +15,7 @@ class Demo_FirstTabbar : UIViewController{
         switch Demo_Segmen.selectedSegmentIndex{
         case 0 :
             view.backgroundColor = .red
-        default:
+        default:  
             view.backgroundColor = .green
         }
     }
