@@ -16,7 +16,7 @@ class DemoTableViewCell: UITableViewCell {
     @IBOutlet weak var imageAva: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        // Initialization code. 
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
