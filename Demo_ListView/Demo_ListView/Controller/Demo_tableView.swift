@@ -9,16 +9,27 @@ import UIKit
 
 class Demo_tableView : UIViewController {
 
-    let listAvatar : [Avatar] = [Avatar(id: 1, name: "A", image: "A", phone: "01234"), Avatar(id: 2, name: "B", image: "B", phone: "01235"), Avatar(id: 3, name: "C", image: "C", phone: "01236")]
+    var listAvatar : [Avatar] = [Avatar]()
     @IBOutlet weak var tableDemo: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        for i in 1...30{
+            let avata = Avatar(id: i, name: "user \(i)", image: radom(), phone: "01234\(i)")
+            listAvatar.append(avata)
+        }
         tableDemo.register(UINib(nibName: "DemoTableViewCell", bundle: nil), forCellReuseIdentifier: "DemoTableViewCell")
         tableDemo.dataSource = self
         tableDemo.delegate = self
         
         
+    }
+    func radom() -> String{
+        let x = Int.random(in: 0..<3)
+        switch x{
+        case 0: return "A"
+        case 1: return "B"
+        default: return "C"
+        }
     }
     @IBAction func clickNext(_ sender: Any) {
         let thisView = UIStoryboard(name: "Main", bundle: nil)
